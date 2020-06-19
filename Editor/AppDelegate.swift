@@ -25,11 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        UIApplication.showLockView()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        if let lockView = UIApplication.authenticationView {
+            lockView.authenticate()
+        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -60,3 +62,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIApplication {
+    static var keyWindow: UIWindow? {
+        let keyWindow = UIApplication.shared.connectedScenes
+            .map({$0 as? UIWindowScene})
+            .compactMap({$0})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
+        return keyWindow
+    }
+    
+    static var authenticationView: AuthenticationView? {
+        if let window = UIApplication.keyWindow {
+            if let lockView = window.viewWithTag(1001) as? AuthenticationView {
+                return lockView
+            }
+        }
+        return nil
+    }
+    
+    static func showLockView() {
+        if let window = self.keyWindow {
+            if window.viewWithTag(1001) == nil {
+                let lockView = AuthenticationView()
+                lockView.backgroundColor = UIColor.red
+                lockView.tag = 1001
+                lockView.frame = UIScreen.main.bounds
+                window.addSubview(lockView)
+            }
+        }
+    }
+}

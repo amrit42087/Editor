@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B4CA2A4249C9FD700EB4E1A /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CA2A2249C9FD700EB4E1A /* LockView.swift */; };
+		4B4CA2A7249C9FDF00EB4E1A /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4CA2A6249C9FDF00EB4E1A /* Toast.swift */; };
 		FF4D8575249ADF6D00B975C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D8574249ADF6D00B975C9 /* AppDelegate.swift */; };
 		FF4D8577249ADF6D00B975C9 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D8576249ADF6D00B975C9 /* DocumentBrowserViewController.swift */; };
 		FF4D8579249ADF6D00B975C9 /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4D8578249ADF6D00B975C9 /* DocumentView.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B4CA2A2249C9FD700EB4E1A /* LockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
+		4B4CA2A6249C9FDF00EB4E1A /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		FF4D8571249ADF6D00B975C9 /* Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Editor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4D8574249ADF6D00B975C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF4D8576249ADF6D00B975C9 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B4CA2AA249CA14100EB4E1A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4B4CA2A6249C9FDF00EB4E1A /* Toast.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4B4CA2AB249CA15500EB4E1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D8578249ADF6D00B975C9 /* DocumentView.swift */,
+				4B4CA2A2249C9FD700EB4E1A /* LockView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4B4CA2AC249CA16800EB4E1A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FF4D8576249ADF6D00B975C9 /* DocumentBrowserViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FF4D8568249ADF6D00B975C9 = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +88,10 @@
 			isa = PBXGroup;
 			children = (
 				FF4D8574249ADF6D00B975C9 /* AppDelegate.swift */,
-				FF4D8576249ADF6D00B975C9 /* DocumentBrowserViewController.swift */,
-				FF4D8578249ADF6D00B975C9 /* DocumentView.swift */,
 				FF4D857A249ADF6D00B975C9 /* Document.swift */,
+				4B4CA2AB249CA15500EB4E1A /* View */,
+				4B4CA2AC249CA16800EB4E1A /* Controller */,
+				4B4CA2AA249CA14100EB4E1A /* Helpers */,
 				FF4D857C249ADF6D00B975C9 /* Main.storyboard */,
 				FF4D857F249ADF6E00B975C9 /* Assets.xcassets */,
 				FF4D8581249ADF6E00B975C9 /* LaunchScreen.storyboard */,
@@ -144,7 +174,9 @@
 				FF4D857B249ADF6D00B975C9 /* Document.swift in Sources */,
 				FF4D8577249ADF6D00B975C9 /* DocumentBrowserViewController.swift in Sources */,
 				FF4D8579249ADF6D00B975C9 /* DocumentView.swift in Sources */,
+				4B4CA2A4249C9FD700EB4E1A /* LockView.swift in Sources */,
 				FF4D8575249ADF6D00B975C9 /* AppDelegate.swift in Sources */,
+				4B4CA2A7249C9FDF00EB4E1A /* Toast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

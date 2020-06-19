@@ -28,6 +28,13 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // Add this to the rootview controller only
+        UIApplication.showLockView()
+        if let lockView = UIApplication.authenticationView {
+            lockView.authenticate()
+        }
+    }
     
     // MARK: UIDocumentBrowserViewControllerDelegate
     
